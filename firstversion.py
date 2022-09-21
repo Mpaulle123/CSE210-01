@@ -29,7 +29,7 @@ def game():
     for i in range(10):
         printGrid(theGrid)
         print("It's " + turn + "'s turn," +
-              turn + " Move to which place (1-9)? ")
+            turn + " Move to which place (1-9)? ")
 
         move = input()
 
@@ -107,15 +107,22 @@ def game():
 
     restart = input("Do you want to play again?(y/n)")
 
-    if restart == "y" or restart == "Y":
-        for key in grid_keys:
-            theGrid[key] = " "
-        game()
-    else:
-
-        while restart != "n" or restart != "N":
-            print("Please enter a correct value")
+    
+    while restart !="n" or restart !="N":
+        
+        if restart == "y" or restart == "Y":
+            for key in grid_keys:
+                theGrid[key] = " "
+            game()
+        
+        elif restart =="n" or restart == "N":
+            break
+            
+        else:
+            print()
+            print("please enter a correct value")
             restart = input("Do you want to play again?(y/n)")
+            
 
 
 if __name__ == "__main__":
