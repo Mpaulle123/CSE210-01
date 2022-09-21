@@ -21,15 +21,14 @@ def printGrid(board):
 
 # here I define the moves
 # the main function
-def game():
+def main():
 
     turn = 'X'
     count = 0
 
     for i in range(10):
         printGrid(theGrid)
-        print("It's " + turn + "'s turn," +
-            turn + " Move to which place (1-9)? ")
+        print("It's " + turn + "'s turn, " + turn + " Move to which place (1-9)? ")
 
         move = input()
 
@@ -46,56 +45,56 @@ def game():
             if theGrid['1'] == theGrid['2'] == theGrid['3'] != ' ':  # the top line
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['4'] == theGrid['5'] == theGrid['6'] != ' ':  # the middle line
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['7'] == theGrid['8'] == theGrid['9'] != ' ':  # the bottom line
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['1'] == theGrid['4'] == theGrid['7'] != ' ':  # the first  colomn
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['2'] == theGrid['5'] == theGrid['8'] != ' ':  # the second  colomn
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['3'] == theGrid['6'] == theGrid['9'] != ' ':  # the third  colomn
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['1'] == theGrid['5'] == theGrid['9'] != ' ':  # one diagonal
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
             elif theGrid['7'] == theGrid['5'] == theGrid['3'] != ' ':  # other diagonal
                 printGrid(theGrid)
                 print("\nGame Over.\n")
-                print("********" + turn + " won.********")
+                print("******** " + turn + " won.********")
                 break
 
 # if no one of the player wins, the result is declared as tie
         if count == 9:
             print("\nGame Over.\n")
             print("It's a Tie!!")
-
+            break
 # this is to change the player after every move
         if turn == 'X':
             turn = 'O'
@@ -113,7 +112,7 @@ def game():
         if restart == "y" or restart == "Y":
             for key in grid_keys:
                 theGrid[key] = " "
-            game()
+            main()
         
         elif restart =="n" or restart == "N":
             break
@@ -126,4 +125,4 @@ def game():
 
 
 if __name__ == "__main__":
-    game()
+    main()
