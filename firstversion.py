@@ -1,5 +1,7 @@
-# i define first the grid
+# Tic-tac-toe game
+# Paulle Mahouangou
 
+# i define first the grid
 
 theGrid = {'1': ' ', '2': ' ', '3': ' ',
            '4': ' ', '5': ' ', '6': ' ',
